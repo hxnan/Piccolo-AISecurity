@@ -131,6 +131,7 @@ Open **http://127.0.0.1:8080/**. See [Arena setup](arena/README.md), [API](arena
 | [inference/](inference/README.md) | Full-checkpoint reference inference and native protocol |
 | [examples/](examples/README.md) | Minimal decision request and local invocation |
 | [evaluation/](evaluation/README.md) | Benchmark results and one-command reproduction |
+| [security/](security/README.md) | AISecurity eval/training sets, 0.8B baseline and LoRA report |
 | [arena/](arena/README.md) | Interactive application, shared engines, results and replays |
 | [arena/docs/WEBSITE.md](arena/docs/WEBSITE.md) | Bilingual website source, Method figures and local preview |
 | [examples/workflows/](examples/workflows/README.md) | 12 bilingual Harness and Data workflow examples |

@@ -1,0 +1,271 @@
+{
+  "name": "ais-security-v1",
+  "description": "Hard-label AI security decisions merged from HarnessJevBench and JevBench Public, plus authored destructive-command cases. Native state/questions, expected labels, and an explicit source per record.",
+  "dataset": "ais_security_v1.jsonl",
+  "dataset_sha256": "6df7e041bc5af7bb02ab9b3d5c85c07925d4d1c3979e375ab64d6eba3c77531a",
+  "counts": {
+    "records": 225,
+    "questions": 233,
+    "by_benchmark": {
+      "HarnessJevBench": 182,
+      "JevBench": 13,
+      "self-extended": 30
+    },
+    "by_category": {
+      "access_control": 3,
+      "action_risk_gate": 8,
+      "action_safety": 13,
+      "ambiguity_safety": 8,
+      "audit_integrity": 13,
+      "authorization": 14,
+      "context_integrity": 10,
+      "data_access": 1,
+      "data_egress": 8,
+      "data_persistence": 8,
+      "destructive_command": 30,
+      "input_validation": 14,
+      "privacy_compliance": 2,
+      "privacy_disclosure": 11,
+      "privilege_scoping": 23,
+      "prompt_injection": 14,
+      "retry_safety": 9,
+      "security_operations": 1,
+      "state_integrity": 17,
+      "ui_action_safety": 8,
+      "user_consent": 10
+    },
+    "harness_by_scenario": {
+      "argument_validation": 14,
+      "browser_action": 8,
+      "browser_confirmation": 10,
+      "cache_validity": 8,
+      "clarification_abstention": 8,
+      "context_compression": 10,
+      "context_retention": 13,
+      "delegation": 10,
+      "injection_boundary": 8,
+      "memory_write": 8,
+      "privacy_release": 11,
+      "retry_or_escalate": 9,
+      "safety_gate": 8,
+      "secret_egress": 8,
+      "subagent_dispatch": 13,
+      "tool_call_review": 13,
+      "tool_permission": 14,
+      "version_conflict": 9
+    },
+    "jevbench_by_family": {
+      "adversarial": 6,
+      "ambiguous": 1,
+      "long_policy": 3,
+      "policy": 2,
+      "trap": 1
+    },
+    "by_question_type": {
+      "choice": 131,
+      "noul": 94,
+      "score": 8
+    },
+    "extended_by_language": {
+      "en": 15,
+      "zh": 15
+    },
+    "extended_by_difficulty": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2,
+      "6": 2,
+      "7": 2,
+      "8": 2,
+      "9": 2,
+      "10": 2,
+      "11": 2,
+      "12": 2,
+      "13": 2,
+      "14": 2,
+      "15": 2
+    }
+  },
+  "selection": {
+    "labels": "hard only; upstream soft probability views are excluded",
+    "harness": {
+      "rule": "scenario-level inclusion; records with no hard question are dropped",
+      "included_scenarios": {
+        "argument_validation": "input_validation",
+        "browser_action": "ui_action_safety",
+        "browser_confirmation": "user_consent",
+        "cache_validity": "state_integrity",
+        "clarification_abstention": "ambiguity_safety",
+        "context_compression": "context_integrity",
+        "context_retention": "audit_integrity",
+        "delegation": "privilege_scoping",
+        "injection_boundary": "prompt_injection",
+        "memory_write": "data_persistence",
+        "privacy_release": "privacy_disclosure",
+        "retry_or_escalate": "retry_safety",
+        "safety_gate": "action_risk_gate",
+        "secret_egress": "data_egress",
+        "subagent_dispatch": "privilege_scoping",
+        "tool_call_review": "action_safety",
+        "tool_permission": "authorization",
+        "version_conflict": "state_integrity"
+      },
+      "excluded_scenarios": {
+        "budget_allocation": "resource planning, not a security control",
+        "completion_verification": "completion checking, not a security control",
+        "concurrency_transaction": "transaction consistency, not a security control",
+        "model_routing": "model routing, not a security control",
+        "plan_progress": "plan progress, not a security control",
+        "reasoning_budget": "reasoning budget, not a security control",
+        "retrieval_evidence": "evidence sufficiency, not a security control",
+        "retry_recovery": "retry recovery, not a security control",
+        "termination_evidence": "termination evidence, not a security control",
+        "tool_selection": "tool choice, not a security control",
+        "trajectory_progress": "trajectory progress, not a security control"
+      },
+      "unselected_records": {
+        "budget_allocation": 16,
+        "completion_verification": 11,
+        "concurrency_transaction": 11,
+        "model_routing": 14,
+        "plan_progress": 10,
+        "reasoning_budget": 10,
+        "retrieval_evidence": 10,
+        "retry_recovery": 11,
+        "termination_evidence": 9,
+        "tool_selection": 16,
+        "trajectory_progress": 7
+      },
+      "soft_only_records_dropped": {
+        "browser_action": 2,
+        "browser_confirmation": 1,
+        "cache_validity": 3,
+        "context_compression": 1,
+        "context_retention": 1,
+        "memory_write": 2,
+        "privacy_release": 3,
+        "secret_egress": 1,
+        "tool_permission": 3,
+        "version_conflict": 1
+      }
+    },
+    "jevbench": {
+      "rule": "item-level review of the public original/easy/hard splits",
+      "included_ids": {
+        "hard-sol-a-adversarial-01": "prompt_injection",
+        "hard-sol-a-adversarial-06": "prompt_injection",
+        "hard-sol-a-adversarial-07": "prompt_injection",
+        "hard-sol-a-adversarial-08": "prompt_injection",
+        "hard-sol-a-adversarial-09": "prompt_injection",
+        "hard-sol-a-adversarial-11": "prompt_injection",
+        "original-policy-05-0": "access_control",
+        "original-policy-05-1": "access_control",
+        "hard-opus-b-ambiguous-09": "security_operations",
+        "hard-opus-c-long_policy-02": "privacy_compliance",
+        "hard-sol-a-trap-05": "access_control",
+        "hard-sol-b-long_policy-02": "data_access",
+        "hard-sol-b-long_policy-05": "privacy_compliance"
+      },
+      "included_rationale": {
+        "hard-sol-a-adversarial-01": "uploaded file spoofs an approval; access must follow trusted metadata",
+        "hard-sol-a-adversarial-06": "HTML comment injects a sponsorship claim; user-controlled content is not metadata",
+        "hard-sol-a-adversarial-07": "text layer in a scanned contract injects a deletion directive",
+        "hard-sol-a-adversarial-08": "hidden resume text injects a score override",
+        "hard-sol-a-adversarial-09": "diagnostic filename claims an outage; priority follows monitoring",
+        "hard-sol-a-adversarial-11": "narrative injects an authoritative router notice",
+        "original-policy-05-0": "suspension overrides own-team file access",
+        "original-policy-05-1": "suspended employee requests own-team file",
+        "hard-opus-b-ambiguous-09": "SOC impossible-travel triage with MFA and device evidence",
+        "hard-opus-c-long_policy-02": "GDPR erasure request versus transaction-record retention",
+        "hard-sol-a-trap-05": "whether an address-override exception was actually authorized",
+        "hard-sol-b-long_policy-02": "customer export limited by direct-identifier and aggregate rules",
+        "hard-sol-b-long_policy-05": "deletion schedule conflicts with a legal hold"
+      },
+      "dropped_ids": {
+        "hard-opus-b-ambiguous-10": "recipient disambiguation is data-loss prevention, weaker security signal",
+        "hard-opus-c-long_policy-08": "incident severity grading is closer to operations than security",
+        "hard-sol-a-multi_hop-02": "security routing is already covered by the SOC triage item",
+        "hard-sol-a-multi_hop-10": "PII access exception overlaps the export-standard item",
+        "hard-sol-a-multi_hop-12": "identity verification is a single narrow case",
+        "hard-sol-b-routing_hard-02": "fraud routing overlaps security operations coverage",
+        "hard-sol-b-routing_hard-09": "repository authorization overlaps the access-control items"
+      },
+      "excluded_families": {
+        "intent": "intent classification",
+        "fact": "factual reading",
+        "extraction": "field extraction",
+        "tool_selection": "tool choice",
+        "adequacy": "answer adequacy",
+        "judge_hard": "answer-quality judging",
+        "ordinal": "incident impact scale (availability, not security)",
+        "probability": "probabilistic forecasting",
+        "temporal_numeric": "date and threshold arithmetic",
+        "tradeoff": "policy precedence in business workflows",
+        "trap": "careful reading of ordinary business rules",
+        "ambiguous": "evidence-quality ambiguity, except selected security cases",
+        "multi_hop": "document reasoning, except selected security cases",
+        "long_policy": "long policy reasoning, except selected privacy/security cases",
+        "policy": "business policy compliance, except selected access-control cases",
+        "routing": "specialist routing",
+        "routing_hard": "specialist routing, except selected security cases"
+      },
+      "excluded_records_by_family": {
+        "adequacy": 12,
+        "ambiguous": 6,
+        "extraction": 24,
+        "fact": 12,
+        "intent": 24,
+        "judge_hard": 17,
+        "long_policy": 16,
+        "multi_hop": 18,
+        "ordinal": 12,
+        "policy": 10,
+        "probability": 10,
+        "routing": 12,
+        "routing_hard": 5,
+        "temporal_numeric": 15,
+        "tool_selection": 12,
+        "tradeoff": 6,
+        "trap": 7
+      }
+    },
+    "extended": {
+      "rule": "authored for this repository; not derived from an upstream benchmark",
+      "file": "deletion_guard_v1.jsonl",
+      "sha256": "1c86bcae796e84faf0e3a16acce4163091bbd4ac56ba89c2d38dc0643f9e345d",
+      "category": "destructive_command",
+      "records": 30,
+      "languages": {
+        "en": 15,
+        "zh": 15
+      },
+      "difficulty_order": "1 = simplest task and command, 15 = longest compound command",
+      "label_balance": {
+        "false": 16,
+        "true": 14
+      },
+      "decision": "binary auto-approval gate for cmd.exe deletion commands built around cd .. && del patterns",
+      "hard_tier": "difficulty 11-15 use 300+ character command chains across multiple directories and include users who wave the risk away"
+    }
+  },
+  "sources": {
+    "harness": {
+      "repository": "https://github.com/agentscope-ai/HarnessJevBench.git",
+      "revision": "50ed12899b4767392a2ad8cb515599f049f7bd9d",
+      "record_path": "benchmark/records.jsonl",
+      "data_license": "MIT"
+    },
+    "jevbench": {
+      "repository": "https://github.com/fstandhartinger/jevbench.git",
+      "revision": "609a664e81f46e03731600bd7bd9f1b7a61257c5",
+      "record_paths": [
+        "datasets/public/original.jsonl",
+        "datasets/public/easy.jsonl",
+        "datasets/public/hard.jsonl"
+      ],
+      "data_license": "MIT"
+    }
+  }
+}

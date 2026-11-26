@@ -131,6 +131,7 @@ bash scripts/run.sh
 | [inference/](inference/README.md) | 完整 checkpoint 参考推理与原生协议 |
 | [examples/](examples/README.md) | 最小决策请求与本地调用 |
 | [evaluation/](evaluation/README.md) | 基准成绩与一键复现脚本 |
+| [security/](security/README.md) | AISecurity 评测/训练集、0.8B 基线与 LoRA 报告 |
 | [arena/](arena/README.md) | 交互应用、引擎、榜单和回放 |
 | [arena/docs/WEBSITE.md](arena/docs/WEBSITE.md) | 双语官网源码、Method 图示与本地预览 |
 | [examples/workflows/](examples/workflows/README.md) | 12 个双语 Harness / Data 工作流案例 |

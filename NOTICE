@@ -15,6 +15,12 @@ The SGLang plugin retains the FlexDM MIT notice and the MIT notice for
 Decision Index image resizing, Copyright (c) 2026 Apolinário Passos, in
 inference/piccolo_inference_sglang/piccolo_inference_sglang/licenses/.
 
+The AISecurity evaluation set in security/ais_security_v1.jsonl includes
+selected benchmark data from HarnessJevBench and JevBench, both under the MIT
+License. Copyright and permission notices are in security/THIRD_PARTY.md.
+The self-extended destructive-command cases in security/extended/ are original
+content of this repository under Apache-2.0.
+
 See arena/docs/THIRD_PARTY.md for game engines, fonts and other components,
 and assets/brands/README.md for external brand assets.
 Model checkpoints have their own LICENSE and third-party notices in each

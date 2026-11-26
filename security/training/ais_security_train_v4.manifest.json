@@ -1,0 +1,56 @@
+{
+  "name": "ais-security-train-v4",
+  "description": "v1 non-destructive training cases plus 240 policy-free hard deletion cases.",
+  "dataset": "ais_security_train_v4.jsonl",
+  "dataset_sha256": "0127b8b5dd8a99ee39e57b8075991c3b006e742478b0e21a43590886dc7dd056",
+  "v1_source": "ais_security_train_v1.jsonl",
+  "hard_source": "policy_free_deletion_v4.jsonl",
+  "hard_sha256": "a5e9e9187be810bbdd3bc9b46c1032a30e1ffa5b9adb1c7ed606c5b39143a0d5",
+  "counts": {
+    "records": 716,
+    "by_split": {
+      "dev": 183,
+      "train": 533
+    },
+    "by_category": {
+      "access_consent": 60,
+      "action_risk_gate": 30,
+      "authorization": 80,
+      "context_audit": 42,
+      "data_egress_privacy": 80,
+      "destructive_command": 240,
+      "input_validation": 40,
+      "prompt_injection": 84,
+      "state_ambiguity_retry": 60
+    },
+    "by_language": {
+      "en": 353,
+      "zh": 363
+    },
+    "by_question_type": {
+      "choice": 348,
+      "noul": 338,
+      "score": 30
+    },
+    "labels": {
+      "false": 547,
+      "true": 169
+    }
+  },
+  "method": {
+    "v1": "non-destructive cases from ais_security_train_v1 unchanged",
+    "v4": "policy-free deletion cases; state has task/shell/cwd/command/environment only",
+    "targets": "hard labels; derive one-hot or smoothed candidate targets at training time"
+  },
+  "leakage": {
+    "thresholds": {
+      "jaccard_5gram": 0.25,
+      "command_lcs_chars": 60
+    },
+    "max_jaccard_v3": 0.4676,
+    "max_command_lcs": 48,
+    "rejected": [],
+    "template_overlap": true,
+    "note": "V4 shares template families with V3; exact states and commands are not copied. Use the v3 result as in-distribution task learning, not unseen-template generalisation."
+  }
+}

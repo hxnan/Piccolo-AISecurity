@@ -1,0 +1,204 @@
+{
+  "name": "ais-security-train-v5",
+  "description": "Balanced v5 set: non-destructive replay x2 plus policy-free hard deletions x2, with junction in train.",
+  "dataset": "ais_security_train_v5.jsonl",
+  "dataset_sha256": "ae4805922691838e6fb90a58dffff0aec726f423ce75bf823c210a1df1b7686b",
+  "compact": "ais_security_train_v5_compact.jsonl",
+  "compact_sha256": "91ebadabab4cb2eef30a8caedde8e4b3c48db35b044dfd795b616d456cca5c71",
+  "stage2": "ais_security_v5_hard_only_d2.jsonl",
+  "stage2_sha256": "2d26e59b81edca355e9625042938dcfa44e36488d54970887f51d4ea4a410c63",
+  "sources": [
+    "ais_security_train_v1_v2.jsonl",
+    "ais_security_v5_hard_only.jsonl"
+  ],
+  "counts": {
+    "records": 1489,
+    "by_split": {
+      "dev": 203,
+      "train": 1286
+    },
+    "by_category": {
+      "access_consent": 105,
+      "action_risk_gate": 45,
+      "authorization": 260,
+      "context_audit": 70,
+      "data_egress_privacy": 140,
+      "destructive_command": 552,
+      "input_validation": 72,
+      "prompt_injection": 140,
+      "state_ambiguity_retry": 105
+    },
+    "by_language": {
+      "en": 736,
+      "zh": 753
+    },
+    "by_question_type": {
+      "choice": 1276,
+      "noul": 168,
+      "score": 45
+    },
+    "labels": {
+      "0": 13,
+      "1": 11,
+      "2": 9,
+      "3": 12,
+      "allow": 256,
+      "approve": 70,
+      "bad_type": 8,
+      "block": 35,
+      "block_export": 50,
+      "check_receipt": 21,
+      "clarify": 16,
+      "confirm_first": 14,
+      "deny": 336,
+      "escalate": 20,
+      "exclusive_conflict": 16,
+      "false": 84,
+      "grant": 60,
+      "halt": 14,
+      "merge_cell": 16,
+      "missing_field": 16,
+      "ok": 16,
+      "permit": 56,
+      "proceed": 14,
+      "publish": 74,
+      "purge": 14,
+      "refuse": 60,
+      "restrict_view": 21,
+      "retain": 7,
+      "review": 10,
+      "same_key": 16,
+      "true": 84,
+      "unknown_field": 16,
+      "use_receipt": 24
+    },
+    "hard": {
+      "train": 192,
+      "dev": 48,
+      "replay": 192
+    }
+  },
+  "variants": {
+    "balanced": {
+      "file": "ais_security_train_v5.jsonl",
+      "records": 1489,
+      "use": "recommended"
+    },
+    "compact": {
+      "file": "ais_security_train_v5_compact.jsonl",
+      "records": 1088,
+      "counts": {
+        "records": 1088,
+        "by_split": {
+          "dev": 203,
+          "train": 885
+        },
+        "by_category": {
+          "access_consent": 60,
+          "action_risk_gate": 30,
+          "authorization": 140,
+          "context_audit": 42,
+          "data_egress_privacy": 80,
+          "destructive_command": 552,
+          "input_validation": 40,
+          "prompt_injection": 84,
+          "state_ambiguity_retry": 60
+        },
+        "by_language": {
+          "en": 539,
+          "zh": 549
+        },
+        "by_question_type": {
+          "choice": 960,
+          "noul": 98,
+          "score": 30
+        },
+        "labels": {
+          "0": 8,
+          "1": 7,
+          "2": 7,
+          "3": 8,
+          "allow": 256,
+          "approve": 40,
+          "bad_type": 8,
+          "block": 21,
+          "block_export": 30,
+          "check_receipt": 14,
+          "clarify": 8,
+          "confirm_first": 7,
+          "deny": 316,
+          "escalate": 10,
+          "exclusive_conflict": 8,
+          "false": 49,
+          "grant": 30,
+          "halt": 7,
+          "merge_cell": 8,
+          "missing_field": 8,
+          "ok": 8,
+          "permit": 32,
+          "proceed": 7,
+          "publish": 42,
+          "purge": 7,
+          "refuse": 30,
+          "restrict_view": 14,
+          "retain": 7,
+          "review": 10,
+          "same_key": 8,
+          "true": 49,
+          "unknown_field": 8,
+          "use_receipt": 16
+        },
+        "hard": {
+          "train": 192,
+          "dev": 48,
+          "replay": 192
+        }
+      },
+      "use": "ablation: non-destructive x1"
+    }
+  },
+  "recipe": {
+    "init": "fresh Piccolo-0.8B-VL base",
+    "epochs": 1,
+    "batch": 1,
+    "grad_accum": 4,
+    "lr": 1.5e-05,
+    "lora_r": 32,
+    "lora_alpha": 64,
+    "samples": "v1_v2 train x2 + hard train x2",
+    "why": "Non-destructive replay reduces Harness drift while keeping the deletion gate."
+  },
+  "split_policy": {
+    "hard_train_templates": [
+      "a1",
+      "a10",
+      "a2",
+      "a4",
+      "a5",
+      "a7",
+      "a8",
+      "a9",
+      "d1",
+      "d2",
+      "d3",
+      "d4",
+      "d5",
+      "d6",
+      "d8",
+      "d9"
+    ],
+    "hard_dev_templates": [
+      "a3",
+      "a6",
+      "d10",
+      "d7"
+    ],
+    "change": "d2 junction moved dev -> train; d10 rd /s protected moved train -> dev",
+    "reason": "All v4 false-allows were junction; d10 is conceptually covered by d3."
+  },
+  "leakage": {
+    "max_jaccard_v5": 0.4861,
+    "template_overlap": true,
+    "note": "V5 training shares template families with the v5 evaluation set; exact states/commands are not copied. In-distribution task training, not unseen-template generalisation."
+  }
+}

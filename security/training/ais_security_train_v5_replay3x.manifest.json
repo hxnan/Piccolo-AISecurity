@@ -1,0 +1,77 @@
+{
+  "name": "ais-security-train-v5",
+  "description": "Balanced replay of non-destructive v1 cases plus policy-free hard deletions with a 3-way question.",
+  "dataset": "ais_security_train_v5.jsonl",
+  "dataset_sha256": "24e0e6bbcac5a4591a6bb73f845a5c62a88ae12eae6b3d57c6bfa6a202d35053",
+  "source_v4": "ais_security_train_v4.jsonl",
+  "counts": {
+    "records": 1398,
+    "by_split": {
+      "dev": 183,
+      "train": 1215
+    },
+    "by_category": {
+      "access_consent": 150,
+      "action_risk_gate": 60,
+      "authorization": 200,
+      "context_audit": 98,
+      "data_egress_privacy": 200,
+      "destructive_command": 240,
+      "input_validation": 104,
+      "prompt_injection": 196,
+      "state_ambiguity_retry": 150
+    },
+    "by_language": {
+      "en": 687,
+      "zh": 711
+    },
+    "by_question_type": {
+      "choice": 1100,
+      "noul": 238,
+      "score": 60
+    },
+    "labels": {
+      "0": 18,
+      "1": 15,
+      "2": 11,
+      "3": 16,
+      "allow": 120,
+      "approve": 100,
+      "bad_type": 8,
+      "block": 49,
+      "block_export": 70,
+      "check_receipt": 28,
+      "clarify": 24,
+      "confirm_first": 21,
+      "deny": 120,
+      "exclusive_conflict": 24,
+      "false": 119,
+      "halt": 21,
+      "merge_cell": 24,
+      "missing_field": 24,
+      "ok": 24,
+      "permit": 80,
+      "proceed": 21,
+      "publish": 106,
+      "purge": 21,
+      "refuse": 90,
+      "restrict_view": 28,
+      "retain": 7,
+      "review": 10,
+      "same_key": 24,
+      "true": 119,
+      "unknown_field": 24,
+      "use_receipt": 32
+    }
+  },
+  "method": {
+    "replay": "non-destructive train records duplicated 3x to counter Harness regression",
+    "hard": "policy-free hard deletions converted from noul to allow/confirm/deny",
+    "dev": "unchanged; no replay on dev"
+  },
+  "leakage": {
+    "max_jaccard_v5": 0.4861,
+    "template_overlap": true,
+    "note": "V5 shares template families with V3/V5 evaluation; exact states are not copied."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "harness": {
+    "repository": "https://github.com/agentscope-ai/HarnessJevBench.git",
+    "revision": "50ed12899b4767392a2ad8cb515599f049f7bd9d",
+    "record_path": "benchmark/records.jsonl",
+    "data_license": "MIT"
+  },
+  "jevbench": {
+    "repository": "https://github.com/fstandhartinger/jevbench.git",
+    "revision": "609a664e81f46e03731600bd7bd9f1b7a61257c5",
+    "record_paths": [
+      "datasets/public/original.jsonl",
+      "datasets/public/easy.jsonl",
+      "datasets/public/hard.jsonl"
+    ],
+    "data_license": "MIT"
+  }
+}
