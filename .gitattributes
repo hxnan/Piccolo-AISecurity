@@ -1,1 +1,4 @@
 arena/web/blog/assets/zenless-zone-zero.mp4 filter=lfs diff=lfs merge=lfs -text
+
+# AISecurity data and results are byte-sensitive: keep LF and disable EOL conversion.
+security/** -text
