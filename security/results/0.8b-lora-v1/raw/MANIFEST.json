@@ -1,0 +1,78 @@
+{
+  "description": "Archived raw evaluation outputs (model responses, per-question scores, failures, summaries).",
+  "dataset_version": "0.8b-lora-v1",
+  "files": [
+    {
+      "label": "baseline",
+      "source": "var/eval/0.8b-baseline",
+      "raw.jsonl": {
+        "file": "baseline.raw.jsonl",
+        "bytes": 452335,
+        "sha256": "961a7b03cfc5ef54f4a9f4ec1c9581eb8167d3d897f67e0e54f59036817e9951"
+      },
+      "failures.md": {
+        "file": "baseline.failures.md",
+        "bytes": 4975,
+        "sha256": "dfe3ae2d29ccc2afea7d48230a786bee61f7b867dce5bc6f3b148cbf0514ef84"
+      },
+      "summary.md": {
+        "file": "baseline.summary.md",
+        "bytes": 3796,
+        "sha256": "c6f4dd55685211645837c06c38cf1f56a67b693f35912bd4dd1dd5eaf9bb990e"
+      },
+      "run.json": {
+        "file": "baseline.run.json",
+        "bytes": 688,
+        "sha256": "cb8b8c86f6c8894d573f33dee52e1f51b9e5f14e0dc8f22cb9ee803fabc63322"
+      }
+    },
+    {
+      "label": "lora-1ep",
+      "source": "var/eval/0.8b-lora-1ep",
+      "raw.jsonl": {
+        "file": "lora-1ep.raw.jsonl",
+        "bytes": 457511,
+        "sha256": "f72a395c0ee30f83fe1bc3779752126bb08909f5b0f91b61fe93b2381c8d2cac"
+      },
+      "failures.md": {
+        "file": "lora-1ep.failures.md",
+        "bytes": 4885,
+        "sha256": "7ceae683fc2f035a82a9844856fea96e450f0426ce7ceadf34eb1252c7b4d32d"
+      },
+      "summary.md": {
+        "file": "lora-1ep.summary.md",
+        "bytes": 3825,
+        "sha256": "8af755387d67337db3c4b17f6a289edf4221db3a246b6352bb204275930218f1"
+      },
+      "run.json": {
+        "file": "lora-1ep.run.json",
+        "bytes": 697,
+        "sha256": "1d58a50694ad1815a560161815cb23d02da95e1d5f1ddac91fad2fd2f4c9a0a8"
+      }
+    },
+    {
+      "label": "lora-3ep",
+      "source": "var/eval/0.8b-lora-v1",
+      "raw.jsonl": {
+        "file": "lora-3ep.raw.jsonl",
+        "bytes": 457093,
+        "sha256": "8626fedf9b8732acc938a50d3d0955bad1872eb073a9b452ca73230a8b5a99ed"
+      },
+      "failures.md": {
+        "file": "lora-3ep.failures.md",
+        "bytes": 4881,
+        "sha256": "2e82aff1d17ca922cc1f2a123939a2756bc5ca427230288b30822e9813bb5af1"
+      },
+      "summary.md": {
+        "file": "lora-3ep.summary.md",
+        "bytes": 3907,
+        "sha256": "5cb774516048fee5e0f66a722fb207a7cb6d40d153636170f46d184b8bba8591"
+      },
+      "run.json": {
+        "file": "lora-3ep.run.json",
+        "bytes": 696,
+        "sha256": "2be583fb0a4c4eaeec0e4addc11748a5ba0764213c6030ea73dcf1a62ea216c7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "description": "Archived raw evaluation outputs (model responses, per-question scores, failures, summaries).",
+  "dataset_version": "0.8b-v5",
+  "files": [
+    {
+      "label": "baseline",
+      "source": "var/eval/0.8b-baseline-v5",
+      "raw.jsonl": {
+        "file": "baseline.raw.jsonl",
+        "bytes": 501340,
+        "sha256": "4ed35d2a1b0d63f82adde2f0953184d26c9ac5a67a26830c0b6c6ef94bdb0003"
+      },
+      "failures.md": {
+        "file": "baseline.failures.md",
+        "bytes": 4657,
+        "sha256": "8bc84b45f334d5efdc48ed0f5bf9ba7f8acfe21d72e1b531014bdde4084001ec"
+      },
+      "summary.md": {
+        "file": "baseline.summary.md",
+        "bytes": 3844,
+        "sha256": "29b29603a4a27217be50e4d0f3d18c33266d376b2fad42e5544c510cce536ec9"
+      },
+      "run.json": {
+        "file": "baseline.run.json",
+        "bytes": 675,
+        "sha256": "82db4f025d367a92aff534a127adbc3f47fffb68188616f9e3da4bce3c53f2f3"
+      }
+    },
+    {
+      "label": "single",
+      "source": "var/eval/0.8b-lora-v5-single",
+      "raw.jsonl": {
+        "file": "single.raw.jsonl",
+        "bytes": 509336,
+        "sha256": "f1d9112b054171b8e08b85d27a5d3d6347117690e4974b59e2e8476a00293bf2"
+      },
+      "failures.md": {
+        "file": "single.failures.md",
+        "bytes": 4859,
+        "sha256": "691c9314a77f7f22546807f2287cd7061da1e0859eeb59c2d585132364e56288"
+      },
+      "summary.md": {
+        "file": "single.summary.md",
+        "bytes": 3490,
+        "sha256": "156758924a360ef9ac26e31fcb37e95aa0484ea6eb8de4630efdd26ff6dab6d2"
+      },
+      "run.json": {
+        "file": "single.run.json",
+        "bytes": 690,
+        "sha256": "2c65b9fcd48d0c7d891bedb1a25cc576fe95e6c5a9d5672a9a3ee663a546d93a"
+      }
+    },
+    {
+      "label": "balanced",
+      "source": "var/eval/0.8b-lora-v5-balanced",
+      "raw.jsonl": {
+        "file": "balanced.raw.jsonl",
+        "bytes": 512170,
+        "sha256": "9c0a731f7b27eb0f488e0f1845e6916130dee5a0656c40d38cde9f8734075ddb"
+      },
+      "failures.md": {
+        "file": "balanced.failures.md",
+        "bytes": 4844,
+        "sha256": "3fc40525af32c49a76462389399c0dd135946fad3dc76999d6f23551874bfc87"
+      },
+      "summary.md": {
+        "file": "balanced.summary.md",
+        "bytes": 3513,
+        "sha256": "635ea7ac261afade318d2070d8f7988cdfab2fe57ff37bcb61a0c4c3096a883f"
+      },
+      "run.json": {
+        "file": "balanced.run.json",
+        "bytes": 692,
+        "sha256": "55a4ab60dc5c7528ce2319d1821dcfc8c95872dc457c728c25d960a7588d024a"
+      }
+    },
+    {
+      "label": "two_stage_d2",
+      "source": "var/eval/0.8b-lora-v5-ts-d2",
+      "raw.jsonl": {
+        "file": "two_stage_d2.raw.jsonl",
+        "bytes": 510070,
+        "sha256": "5be0566319979a0b6bd9a6101836fdbf1df73a3b06ed3c337a4641b3bec9afb9"
+      },
+      "failures.md": {
+        "file": "two_stage_d2.failures.md",
+        "bytes": 4864,
+        "sha256": "2bfac29b0b063c3344c145d7f0ce990965f589dc7d6f6cdf6119151666523277"
+      },
+      "summary.md": {
+        "file": "two_stage_d2.summary.md",
+        "bytes": 3555,
+        "sha256": "383779a3013f15505f61d770ab30d15ee87c5d1b817db502134ae0fd2dc1c467"
+      },
+      "run.json": {
+        "file": "two_stage_d2.run.json",
+        "bytes": 689,
+        "sha256": "45ea9a5e5a59ab3fa6753ca55b9a0ff9188e96ee3bf155e75edc201f1437a9fc"
+      }
+    },
+    {
+      "label": "fresh_v5_replay3x",
+      "source": "var/eval/0.8b-lora-v5",
+      "raw.jsonl": {
+        "file": "fresh_v5_replay3x.raw.jsonl",
+        "bytes": 507053,
+        "sha256": "a33820662452940c4b3a35572081a62e14575740f8e2c489d8a5ae438afc8027"
+      },
+      "failures.md": {
+        "file": "fresh_v5_replay3x.failures.md",
+        "bytes": 4713,
+        "sha256": "1ad607edcc7dcbaffc9fc35ef2004a6f0fd8b9414bade4589a4c7fa83148fc44"
+      },
+      "summary.md": {
+        "file": "fresh_v5_replay3x.summary.md",
+        "bytes": 3620,
+        "sha256": "13d2e1db8ac0c42a9fba9dc69364920e3634d6472bdf03b54da2594c8f9c2ead"
+      },
+      "run.json": {
+        "file": "fresh_v5_replay3x.run.json",
+        "bytes": 683,
+        "sha256": "9c7d12d1d756c459b8de4836fcf6132158205f04362c5e172f3b1fc4f906e85d"
+      }
+    },
+    {
+      "label": "repair",
+      "source": "var/eval/0.8b-lora-v5-repair",
+      "raw.jsonl": {
+        "file": "repair.raw.jsonl",
+        "bytes": 510714,
+        "sha256": "7c854a2e37c5ce62e2aafae2e94393878bae7792744a80411acf79bb1480717b"
+      },
+      "failures.md": {
+        "file": "repair.failures.md",
+        "bytes": 4713,
+        "sha256": "f804191ab2ffb73fc1e9a40c751d89e360f16cb604be3e3651555e85f420eb02"
+      },
+      "summary.md": {
+        "file": "repair.summary.md",
+        "bytes": 3500,
+        "sha256": "fd12e1ce01b3a599e33d5c6c709e84748f0fdc5026485a92963ea36434ea7cc8"
+      },
+      "run.json": {
+        "file": "repair.run.json",
+        "bytes": 690,
+        "sha256": "a336e422829047bc1f3e4d4858b4f99928e90960e8f8dc92b1cf82c4079fea41"
+      }
+    },
+    {
+      "label": "two_stage_1ep",
+      "source": "var/eval/0.8b-lora-v5-on-v1",
+      "raw.jsonl": {
+        "file": "two_stage_1ep.raw.jsonl",
+        "bytes": 509211,
+        "sha256": "1636b79d98811fd2731df3f10d0403b34ea70367632f79cefefc32cbea301e54"
+      },
+      "failures.md": {
+        "file": "two_stage_1ep.failures.md",
+        "bytes": 4908,
+        "sha256": "91abe7de5727062adcf9d5db073717e4f4339c9b313dc972f343a95abfe2e2d1"
+      },
+      "summary.md": {
+        "file": "two_stage_1ep.summary.md",
+        "bytes": 3599,
+        "sha256": "908d4b39b67e0bfd5d8bd68afa4a18a74f24e9f9206d7ed11ad4471b76a2a2ca"
+      },
+      "run.json": {
+        "file": "two_stage_1ep.run.json",
+        "bytes": 689,
+        "sha256": "7781ac0d8bca95c4d456bfca6fee91487ee7ab140560b45cac69dbb009c46f83"
+      }
+    },
+    {
+      "label": "two_stage_2ep",
+      "source": "var/eval/0.8b-lora-v5-on-v1-2ep",
+      "raw.jsonl": {
+        "file": "two_stage_2ep.raw.jsonl",
+        "bytes": 512457,
+        "sha256": "c09ce8be7ac69b84bf0129dbd0ded23df332bc9c8b6730de15f8b917c1f4f492"
+      },
+      "failures.md": {
+        "file": "two_stage_2ep.failures.md",
+        "bytes": 4849,
+        "sha256": "70a1cee1bf18a7c63bc22512769d090b5d8ffd315741d4fb2a40b1092400f29d"
+      },
+      "summary.md": {
+        "file": "two_stage_2ep.summary.md",
+        "bytes": 3497,
+        "sha256": "38cb36f2d5b3a9a78e0adf1260931600b9fb4d7f175b92ca35657fa5e4249ba3"
+      },
+      "run.json": {
+        "file": "two_stage_2ep.run.json",
+        "bytes": 693,
+        "sha256": "27ea9e7a0c1799716d21ad54c20c147a46d3b4cae0218b10efcdfe6359ced884"
+      }
+    }
+  ]
+}

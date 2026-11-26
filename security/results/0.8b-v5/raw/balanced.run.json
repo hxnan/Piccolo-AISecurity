@@ -1,0 +1,21 @@
+{
+  "dataset": "security/ais_security_v5.jsonl",
+  "dataset_sha256": "b39d187b3444e9f6563f4ffdf07bce43345c8271eef8d26a8aae1e80aeb443cc",
+  "model": "piccolo-0.8b-vl-lora-v5-balanced",
+  "endpoint": "http://127.0.0.1:18615/v1/systemone",
+  "workers": 8,
+  "timeout_seconds": 300.0,
+  "retries": 2,
+  "questions_total": 263,
+  "questions_pending": 263,
+  "started_utc": "2026-11-26T11:20:50.605748+00:00",
+  "runner_sha256": "6b1f6ae7261b2c60279f0a24f290ac6633d197415fb64cc326a6c651b18ae7c1",
+  "health": null,
+  "server_info": null,
+  "repo_commit": null,
+  "finished_utc": "2026-11-26T11:21:16.378035+00:00",
+  "seconds": 25.77,
+  "completed": 263,
+  "failures": 0,
+  "skipped_existing": 0
+}
