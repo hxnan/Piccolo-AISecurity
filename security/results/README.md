@@ -30,6 +30,22 @@
 - `two_stage_d2`：消融 `piccolo-0.8b-vl-lora-v5-ts-d2`
 - `fresh_v5_replay3x`、`repair`、`two_stage_1ep`、`two_stage_2ep`：中间实验
 
+### 4B
+
+- `4b-v5`：`AgentScope/Piccolo-4B`（BF16，ModelScope release `ver-10281500`）on `ais_security_v5.jsonl`
+- 首次运行因 64 并发、无 chunked prefill 在长题上 OOM；归档的是第二次完整运行（263/263，0 失败）
+- 启动参数见 `security/deploy/launch_eval_model.sh` 和报告
+
+### 9B
+
+- `9b-v5`：`AgentScope/Piccolo-9B`（BF16，ModelScope）on `ais_security_v5.jsonl`
+- 263/263，0 失败；24GB 余量约 2.4GiB，需 `mem 0.90 / max 4 / chunk 1024 / no cuda graph`
+- 启动参数见 `security/deploy/launch_eval_model.sh` 和报告
+
+### 跨模型对比
+
+- `model-size-v5/REPORT.md`：0.8B 基线、0.8B balanced、4B、9B 的 V5 对比
+
 ### v3
 
 - `baseline`、`lora-1ep`

@@ -1,0 +1,30 @@
+{
+  "description": "Archived raw evaluation outputs for Piccolo-4B on the v5 AISecurity set.",
+  "dataset_version": "ais-security-v5",
+  "files": [
+    {
+      "label": "4b",
+      "source": "var\\eval\\4b-v5-v2",
+      "raw.jsonl": {
+        "file": "4b.raw.jsonl",
+        "bytes": 498362,
+        "sha256": "29d3ef84c35c2abd549fab1b89ebafc6cba7d24101103c8e04dfea93b4ac4c0a"
+      },
+      "failures.md": {
+        "file": "4b.failures.md",
+        "bytes": 4676,
+        "sha256": "d1be52fc4af5e2669da80f00f3b21d614943cb9baaef39ca15e9e32b563638fa"
+      },
+      "summary.md": {
+        "file": "4b.summary.md",
+        "bytes": 3572,
+        "sha256": "141c1823ef6c62c7e097b90a0d5214c1bd00d2000d2ff92365ac86c349a49223"
+      },
+      "run.json": {
+        "file": "4b.run.json",
+        "bytes": 670,
+        "sha256": "2a5f1b574d50d7499e0b260ff1093b894ffce715d232e5ecfcf438eb54a65279"
+      }
+    }
+  ]
+}

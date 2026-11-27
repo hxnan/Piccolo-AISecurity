@@ -12,6 +12,7 @@
 - v3 无策略硬门报告：[results/0.8b-v3/REPORT.md](results/0.8b-v3/REPORT.md)
 - v4 policy-free 训练+复评：[results/0.8b-v4/REPORT.md](results/0.8b-v4/REPORT.md)
 - v5 中性三选一评测与训练：[results/0.8b-v5/REPORT.md](results/0.8b-v5/REPORT.md)
+- 模型规模对比（0.8B / 4B / 9B）：[results/model-size-v5/REPORT.md](results/model-size-v5/REPORT.md) · 4B [报告](results/4b-v5/REPORT.md) · 9B [报告](results/9b-v5/REPORT.md)
 - 训练集：v1 [README](training/README.md) · v5 [ais_security_train_v5.jsonl](training/ais_security_train_v5.jsonl)
 - LoRA 训练/合并：[train_lora_peft.py](train_lora_peft.py) · [merge_adapter.py](merge_adapter.py) · [build_v2_from_failures.py](build_v2_from_failures.py)
 - 评测/评分/审计脚本：[run_eval.py](run_eval.py)、[score_eval.py](score_eval.py)、[token_audit.py](token_audit.py)

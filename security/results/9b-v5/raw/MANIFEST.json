@@ -1,0 +1,30 @@
+{
+  "description": "Archived raw evaluation outputs for Piccolo-9B on the v5 AISecurity set.",
+  "dataset_version": "ais-security-v5",
+  "files": [
+    {
+      "label": "9b",
+      "source": "var\\eval\\9b-v5",
+      "raw.jsonl": {
+        "file": "9b.raw.jsonl",
+        "bytes": 499179,
+        "sha256": "513130779af0c97ff711c0370ed8030231a1f2cfd42a6b7e11e8800cd3a83813"
+      },
+      "failures.md": {
+        "file": "9b.failures.md",
+        "bytes": 4646,
+        "sha256": "111513d5547faeb95916fcefcb92319f2b871855cc4f6fa09686702cb90743c4"
+      },
+      "summary.md": {
+        "file": "9b.summary.md",
+        "bytes": 3589,
+        "sha256": "02ead3c0af357605f3dbf51a6b1563236aa8d32621018df5afa2a09e817bb8c4"
+      },
+      "run.json": {
+        "file": "9b.run.json",
+        "bytes": 670,
+        "sha256": "fe21dd07e28e6d7fe23a4f8579ee75c61df18e58642e974eb9f6acc3bbfe858f"
+      }
+    }
+  ]
+}
