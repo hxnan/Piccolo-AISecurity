@@ -50,37 +50,45 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("runs", nargs="+", help="run directories under var/eval")
     parser.add_argument("--root", default="var/eval")
+    parser.add_argument("--out", help="write the same markdown to this UTF-8 file")
     args = parser.parse_args()
 
     root = Path(args.root)
     runs = [(name, load(root / name / "scores.jsonl"), json.loads((root / name / "summary.json").read_text(encoding="utf-8")))
             for name in args.runs]
+    lines = []
 
-    print("## Overall\n")
-    print("| run | correct | accuracy | Harness | JevBench | self-extended | gate | false-allow | false-deny | Brier |")
-    print("| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |")
+    def emit(line: str = "") -> None:
+        lines.append(line)
+        print(line)
+
+    emit("## Overall\n")
+    emit("| run | correct | accuracy | Harness | JevBench | self-extended | gate | false-allow | false-deny | Brier |")
+    emit("| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |")
     for name, _, summary in runs:
         overall = summary["overall"]
         source = summary["by_source"]
         gate_summary = summary["destructive_command"]
-        print(f"| {name} | {overall['correct']}/{overall['questions']} | {overall['accuracy']:.2%} | "
-              f"{source['HarnessJevBench']['accuracy']:.2%} | {source['JevBench']['accuracy']:.2%} | "
-              f"{source['self-extended']['accuracy']:.2%} | "
-              f"{gate_summary['correct_allow'] + gate_summary['correct_deny']}/{gate_summary['n']} | "
-              f"{gate_summary['false_allow']} | {gate_summary['false_deny']} | {overall['brier']:.3f} |")
+        emit(f"| {name} | {overall['correct']}/{overall['questions']} | {overall['accuracy']:.2%} | "
+             f"{source['HarnessJevBench']['accuracy']:.2%} | {source['JevBench']['accuracy']:.2%} | "
+             f"{source['self-extended']['accuracy']:.2%} | "
+             f"{gate_summary['correct_allow'] + gate_summary['correct_deny']}/{gate_summary['n']} | "
+             f"{gate_summary['false_allow']} | {gate_summary['false_deny']} | {overall['brier']:.3f} |")
 
-    print("\n## Gate by template\n")
+    emit("\n## Gate by template\n")
     header = "| template | meaning | " + " | ".join(name for name, _, _ in runs) + " |"
-    print(header)
-    print("| --- | --- | " + " | ".join("---:" for _ in runs) + " |")
+    emit(header)
+    emit("| --- | --- | " + " | ".join("---:" for _ in runs) + " |")
     tables = {name: gate(rows) for name, rows, _ in runs}
     for template in TEMPLATES:
         cells = []
         for name, _, _ in runs:
             stats = tables[name][template]
             cells.append(f"{stats['ok']}/{stats['n']}")
-        print(f"| {template} | {TEMPLATE_MEANING[template]} | " + " | ".join(cells) + " |")
+        emit(f"| {template} | {TEMPLATE_MEANING[template]} | " + " | ".join(cells) + " |")
 
+    if args.out:
+        Path(args.out).write_text("\n".join(lines) + "\n", encoding="utf-8")
     return 0
 
 
