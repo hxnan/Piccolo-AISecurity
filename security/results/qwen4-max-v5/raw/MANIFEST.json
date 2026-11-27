@@ -1,0 +1,30 @@
+{
+  "description": "Archived raw evaluation outputs for qwen4-max on the v5 AISecurity set.",
+  "dataset_version": "ais-security-v5",
+  "files": [
+    {
+      "label": "qwen4-max",
+      "source": "var\\eval\\qwen4-max-v5-v3",
+      "raw.jsonl": {
+        "file": "qwen4-max.raw.jsonl",
+        "bytes": 344435,
+        "sha256": "d3a19c04ca7ad2f7dd0dd3a209b9719ff4319d81f49d930c049e92a1b654a899"
+      },
+      "failures.md": {
+        "file": "qwen4-max.failures.md",
+        "bytes": 4675,
+        "sha256": "5ec4410cdfd10211a3c5de0424a05002f182fa09bc07fecdeefce9c1565562f1"
+      },
+      "summary.md": {
+        "file": "qwen4-max.summary.md",
+        "bytes": 3200,
+        "sha256": "59a122753fcd2ab4d99cf5e678c654f4437c6f93228cee5d8ad9f8eddec4cea4"
+      },
+      "run.json": {
+        "file": "qwen4-max.run.json",
+        "bytes": 566,
+        "sha256": "a9c18c8d4eeb276801ed605b6ffb46ab42bf004039d25bb42dc1ebd66bc93a52"
+      }
+    }
+  ]
+}

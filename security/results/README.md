@@ -44,7 +44,25 @@
 
 ### 跨模型对比
 
-- `model-size-v5/REPORT.md`：0.8B 基线、0.8B balanced、4B、9B 的 V5 对比
+- `model-size-v5/REPORT.md`：0.8B 基线、0.8B balanced、4B、9B、Qwen3.8-27B、Qwen3.8-Flash、Qwen4-Max 的 V5 对比
+
+### Qwen3.8-27B（在线）
+
+- `qwen3.8-27b-v5`：阿里云百炼 `qwen3.8-27b`，OpenAI-compatible `/chat/completions`
+- 263/263，0 失败；提示词模板与解析器见 `security/openai_prompt.py`、`security/run_openai_eval.py`
+- 原始响应：`qwen3.8-27b-v5/raw/qwen3.8-27b.raw.jsonl`
+- API key 只从环境变量 `QWEN_API_KEY` 读取，不写盘、不进入归档
+
+### Qwen3.8-Flash（在线）
+
+- `qwen3.8-flash-v5`：263/263，0 失败；大量使用 `confirm`（20/60），false-allow 0、false-deny 13
+- 原始响应：`qwen3.8-flash-v5/raw/qwen3.8-flash.raw.jsonl`
+
+### Qwen4-Max（在线）
+
+- `qwen4-max-v5`：263 题中 258 有效、5 条 Harness 格式失败；严格总体 78.33%，有效题 79.84%
+- 误删除门 93.33%，false-allow 0、false-deny 4（全部 A5）
+- 原始响应：`qwen4-max-v5/raw/qwen4-max.raw.jsonl`
 
 ### v3
 

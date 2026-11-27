@@ -1,0 +1,30 @@
+{
+  "description": "Archived raw evaluation outputs for qwen3.8-27b (online OpenAI-compatible endpoint) on the v5 AISecurity set.",
+  "dataset_version": "ais-security-v5",
+  "files": [
+    {
+      "label": "qwen3.8-27b",
+      "source": "var\\eval\\qwen3.8-27b-v5-v3",
+      "raw.jsonl": {
+        "file": "qwen3.8-27b.raw.jsonl",
+        "bytes": 345494,
+        "sha256": "327b371b9f98f59ba488adfcee3f214af3ced369969f826e6510d3fa98c1d7af"
+      },
+      "failures.md": {
+        "file": "qwen3.8-27b.failures.md",
+        "bytes": 5055,
+        "sha256": "282bf6d3525193b0b35697aa4880b04b98a56ffce006b234d9f5aa4adfcf6d0a"
+      },
+      "summary.md": {
+        "file": "qwen3.8-27b.summary.md",
+        "bytes": 3228,
+        "sha256": "a471dee4e29a0b574ee40127a62a86072118bdb22d4545b43aeed3f70bd13a51"
+      },
+      "run.json": {
+        "file": "qwen3.8-27b.run.json",
+        "bytes": 568,
+        "sha256": "db343884e6c9160f4c214e8d06a92b018d63f1489c0e252e689e0721c0739908"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "description": "Archived raw evaluation outputs for qwen3.8-flash on the v5 AISecurity set.",
+  "dataset_version": "ais-security-v5",
+  "files": [
+    {
+      "label": "qwen3.8-flash",
+      "source": "var\\eval\\qwen3.8-flash-v5",
+      "raw.jsonl": {
+        "file": "qwen3.8-flash.raw.jsonl",
+        "bytes": 329358,
+        "sha256": "95f45fb61f72e168ac05a241c3460ddb70ae956ae0c6715a7e569ac89e56168f"
+      },
+      "failures.md": {
+        "file": "qwen3.8-flash.failures.md",
+        "bytes": 5173,
+        "sha256": "d6d2e85461a743a983f7a27930ac8b77ac502b9e5046fafad8e93c019329b297"
+      },
+      "summary.md": {
+        "file": "qwen3.8-flash.summary.md",
+        "bytes": 3202,
+        "sha256": "a3c773799c109730b9b67ebc542992e83fe8c28122e41d05f946e14851039056"
+      },
+      "run.json": {
+        "file": "qwen3.8-flash.run.json",
+        "bytes": 570,
+        "sha256": "4d4e01601b1b50e540e605885e04c11f2db9dc134962035affb409e6b7d166b8"
+      }
+    }
+  ]
+}

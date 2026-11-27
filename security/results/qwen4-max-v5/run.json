@@ -1,0 +1,17 @@
+{
+  "dataset": "security\\ais_security_v5.jsonl",
+  "dataset_sha256": "b39d187b3444e9f6563f4ffdf07bce43345c8271eef8d26a8aae1e80aeb443cc",
+  "model": "qwen4-max",
+  "endpoint": "https://llm-r2z9ti8e3mzj31lz.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "workers": 4,
+  "timeout_seconds": 300.0,
+  "retries": 2,
+  "questions_total": 263,
+  "questions_pending": 263,
+  "started_utc": "2026-11-27T05:00:36+00:00",
+  "finished_utc": "2026-11-27T05:04:56+00:00",
+  "seconds": 260.43,
+  "completed": 263,
+  "failures": 5,
+  "response_format": true
+}

@@ -13,6 +13,7 @@
 | 3 | 针对基线失败用例生成泛化训练集，做 0.8B LoRA 增训 | v5：1489 条（1286/203）；balanced fresh LoRA | 已完成 |
 | 4 | 用同一评测集复评增训模型并与基线对比 | v5：65.02%；Harness 54.21%；误删除 95.00%（基线 58.33%） | 已完成 |
 | 5 | 总结并输出效果报告 | [v1](results/0.8b-lora-v1/REPORT.md) · [v3](results/0.8b-v3/REPORT.md) · [v4](results/0.8b-v4/REPORT.md) · [v5](results/0.8b-v5/REPORT.md) | 已完成 |
+| 6 | 对比 0.8B / 4B / 9B / Qwen3.8 / Qwen4 在 V5 上的表现 | [模型对比](results/model-size-v5/REPORT.md) · [4B](results/4b-v5/REPORT.md) · [9B](results/9b-v5/REPORT.md) · [Qwen3.8-27B](results/qwen3.8-27b-v5/REPORT.md) · [Qwen3.8-Flash](results/qwen3.8-flash-v5/REPORT.md) · [Qwen4-Max](results/qwen4-max-v5/REPORT.md) | 已完成 |
 
 ## 1. 构建 AISecurity 评测集
 
